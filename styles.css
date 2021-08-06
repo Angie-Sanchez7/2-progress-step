@@ -1,0 +1,87 @@
+/* declarar variables 
+y el declarar variables con root*/
+
+:root {
+  --line-fill: #3498db;
+  --line-empty: #e0e0e0;
+  --background-color: #f6f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  width: 350px;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: var(--line-empty);
+}
+
+.progress {
+  background-color: var(--line-fill);
+  height: 4px;
+  width: 0%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 100%;
+  transition: 0.4s ease;
+}
+
+.circle {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  border: 3px solid var(--line-empty);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-fill);
+}
+
+.btn {
+  background-color: var(--line-fill);
+  color: #fff;
+  border: 0px;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  background-color: var(--line-empty);
+  cursor: not-allowed;
+}
