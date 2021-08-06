@@ -42,7 +42,7 @@ function update() {
         prev.disabled = true
 
     } else if (counterSteps === circles.length) {
-        next.disabled = false
+        next.disabled = true
 
     } else {
         prev.disabled = false
